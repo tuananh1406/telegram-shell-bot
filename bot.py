@@ -285,6 +285,7 @@ def main():
 
     dp.add_handler(CommandHandler("tasks", do_tasks))
     dp.add_handler(CommandHandler("kill", do_kill, pass_args=True))
+    updater.bot.send_message(list(settings.ENABLED_USERS)[0], 'Bot start....')
 
     if not settings.ONLY_SHORTCUT_CMD:
         dp.add_handler(CommandHandler("sudo_login", do_sudo_login, pass_args=True))
